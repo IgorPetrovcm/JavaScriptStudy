@@ -22,3 +22,51 @@
 по ссылке:
 
 #### https://metanit.com/web/javascript/9.1.php
+
+# Обработчики событий 
+
+Иммеем следующий `body` в **html-документе**:
+```html
+<body>
+    <h1>Events</h1>
+    <button id="button1">I'm Button</button>
+</body>
+```
+Чтобы добавить кнопке событие, создадим файл **.js**, напишем в нем функцию, которая, предполагается, будет обрабатывать нажатие нашей кнопки `button1`. При нажатии будет выводить в консоль рандомное число. Код **.js** файла выглядит следующим образом:
+```js
+function button1_Click()
+{
+    console.log(Math.random());
+}
+``` 
+Найдем тег этой кнопки по **id** - `button1` и назначим его событию `onclick` функцию `button1_Click`, написаную нами ранее:
+```js
+let button1 = document.getElementById("button1");
+button1.onclick = button1_Click;
+```
+Изменим **html-документ**:
+```html
+<body>
+    <h1>Events</h1>
+    <button id="button1">I'm Button</button>
+    <script src="js/EventsHandler.js"></script>
+</body>
+```
+
+Результат:
+
+![Alt text](image-1.png)
+
+## Слушатели событий 
+
+Для работы со слушателями в **JavaScript** есть объект `EventTarger`, который определяет методы `addEventListener`(добавление слушателя) и `removeEventListener`(удаление слушателя). Все **html-елементы** тоже являются объектами `EventTarget`, поэтому _они также реализуют выше перечисленные методы_.
+
+Метод `addEventListener` принимает два параметра: название собатия без префикса **on**, который имеет все события(как я понял), и функцию обработчик этого события.
+
+Например:
+```js
+let button = document.getElementById("button1");
+button.addEventListener("click",button1_Click);
+```
+
+Главным плюссом слушателей, то что на одно событие мы можем назначить несколько обрабютчиков!
