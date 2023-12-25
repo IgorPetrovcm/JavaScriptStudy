@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "Lg9dk/tv9ZO0xaOlIgBz0/qn6qQr8CsfLi6koTn6Nfc=",
+  "Source": "post_test_aspproj",
+  "BasePath": "_content/post_test_aspproj",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "post_test_aspproj/wwwroot",
+      "Source": "post_test_aspproj",
+      "ContentRoot": "/home/admin/General/for_tests/post_test_aspproj/wwwroot/",
+      "BasePath": "_content/post_test_aspproj",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/admin/General/for_tests/post_test_aspproj/wwwroot/js/postRequest.js",
+      "SourceId": "post_test_aspproj",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/admin/General/for_tests/post_test_aspproj/wwwroot/",
+      "BasePath": "_content/post_test_aspproj",
+      "RelativePath": "js/postRequest.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/postRequest.js"
+    }
+  ]
+}
