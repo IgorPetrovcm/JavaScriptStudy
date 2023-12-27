@@ -53,3 +53,46 @@ for (image of images){
     console.log(`path: "${image.src}"  alt: "${image.alt}"`);
 }
 ```
+
+## Поиск элементов на веб-странице
+
+Объект `document` предоставляет ряд методов для поиска **элементов**:
++ `getElementById(value)`: находит элемент с заданным в `value` `id` элемента
++ `getElementByTagName(value)`: возвращает коллекцию(`NodeList`) элементов, заданным в `value` тегом элемента
++ `getElementByClassName(value)`: возвращает коллекцию(`NodeList`) элементов, заданным в `value` классом элемента
++ `getElementByName`: возвращает коллекцию(`NodeList`) элементов, заданным в `value` именем элемента 
+
+```js
+let elements_name = document.getElementsByName('2');
+
+for (el of elements_name)
+{
+    console.log(el);
+}
+//или
+
+let p = document.getElementsByName('2')[1];
+console.log(p);
+
+let input = document.getElementsByName('2')[0];
+console.log(input);
+
+let div = document.getElementsByName('2')[2];
+console.log(div);
+```
+
+```js
+let input_elements = document.getElementsByTagName('input');
+
+for (el of input_elements) 
+{
+    console.log(el);
+}
+
+let inputFirst = input_elements[0];
+console.log(inputFirst);
+//Также
+let input_elementFirst = document.getElementsByTagName('input')[0];
+console.log(input_elementFirst);
+
+```
