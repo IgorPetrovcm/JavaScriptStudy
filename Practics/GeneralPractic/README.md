@@ -35,3 +35,15 @@ console.log(table.children.length);
 ```
 ##### Ключевое свойство - `children`, и его свойство `length`
 ___
+Проверку на число можно сделать с помощью `isNaN`: возвращает **false** если это число.
+```js
+if (isNaN(this.value))
+{
+    error_small.innerText = 'Input not number';
+
+    this.parentElement.appendChild(error_small);
+
+    return;
+}
+```
+##### Проверка на является ли строка числом

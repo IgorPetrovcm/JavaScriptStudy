@@ -1,31 +1,81 @@
-function btn_createRow()
+var btn_createRow = document.getElementById('btn_createRow');
+
+btn_createRow.onclick = click_btnCreateRow;
+
+var br = document.createElement('br');
+
+function click_btnCreateRow()
 {
-    let table = document.getElementById("table1");
+    let div = btn_createRow.parentElement;
 
-    let tr = document.createElement('tr');
-    tr.id = "trChild";
-    tr.onclick = tr_click;
-    if (table.children.length == 0){
-        let th = document.createElement('th');
-        th.innerText = "Message";
+    div.appendChild(br);
+    div.appendChild(create_countColumnsInput('input1'));
+}
 
-        tr.appendChild(th);
-        table.appendChild(tr);
+function create_countColumnsInput(id)
+{
+    let div = document.createElement('div');
+    div.className = 'col-xs-2';
+
+    div.appendChild(br);
+
+    let label = document.createElement('label');
+    label.innerText = 'Count Columns:';
+
+    div.appendChild(label);
+
+    let input = document.createElement('input');
+    input.className = 'form-control';
+    input.id = id;
+    input.type = 'number';
+    input.onchange = input_Change1;
+
+    div.appendChild(input);
+
+    return div;
+}
+
+function input_Change1()
+{
+    let error_small = document.createElement('small');
+
+    error_small.className = 'error_small_message';
+
+
+    if ((small_current = this.parentElement.getElementsByTagName('small')[0]) != null)
+    {
+        this.parentElement.removeChild(small_current);
+    }
+    
+    if (this.value == '')
+    {
+        error_small.innerText = 'Input not by empty';
+
+        this.parentElement.appendChild(error_small);
+
+        return;
+    }
+    if (isNaN(this.value))
+    {
+        error_small.innerText = 'Input not number';
+
+        this.parentElement.appendChild(error_small);
+
+        return;
+    }
+    if (Number(this.value) > 10)
+    {
+        error_small.innerText = 'Input number < 11';
+
+        this.parentElement.appendChild(error_small);
+
         return;
     }
 
-    let td = document.createElement('td');
-    td.innerText = "hello";
+    let btn_ok = document.createElement('button');
 
-    tr.appendChild(td);
-    table.appendChild(tr);
+    btn_ok.innerText = 'Ok';
+    btn_ok.className = 'btn btn-success';
+
+    this.parentElement.appendChild(btn_ok);
 }
-function tr_click()
-{
-    alert("You click to tr tag");
-}
-let button = document.getElementById("btn_createRow");
-
-button.addEventListener("click",btn_createRow);
-
-
